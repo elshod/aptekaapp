@@ -17,8 +17,7 @@
         <button 
           class="btn btn-success mt-4" 
           type="submit"
-          :disabled="$v.$invalid">Jo'natish</button>
-
+          :disabled="$v.$invalid">Tekshirish</button>
       <pre>
         {{$v}}
       </pre>
