@@ -11,7 +11,7 @@
           Maydon bo'sh bo'lmasligi lozim
         </div>
         <div class="invalid-feedback" v-show="!$v.email.email">
-          Email noto'g'ri to'ldirildi
+          Email noto'g'ri to'ldirilganligini bildiramiz
         </div>
 
         <button 
