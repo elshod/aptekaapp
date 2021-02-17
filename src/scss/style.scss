@@ -5,3 +5,28 @@ body, * {
 }
 $color: rgb(80, 248, 156);
 
+h1{
+  text-align: center;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #000;
+}
+.center {
+  text-align: center;
+}
+.menu {
+  display: flex;
+  justify-content: center;
+  a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    margin: 0px 5px;
+    &.active {
+      font-weight: bold;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

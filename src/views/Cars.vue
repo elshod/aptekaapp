@@ -1,7 +1,18 @@
 <template>
   <div>
     <h1>Cars Vue</h1>
-    
+    <div class="menu">
+      <router-link 
+        v-for="(car,index) of allCars" 
+        :key="index" 
+        :to="'car/'+car.title">
+        {{car.title}} | <b>{{car.year}}</b>
+      </router-link>
+      
+    </div>
+
+    <hr>
+    <router-view></router-view>
   </div>
 </template>
 <script>
@@ -10,11 +21,11 @@ export default {
     return { 
       // title: '',
       // cars: [ 'Honda', 'Mazda', 'Toyota' ],
-      // allCars: [
-      //   {title: 'Honda', year: 2009},
-      //   {title: 'Mazda', year: 2001},
-      //   {title: 'Toyota', year: 2011},
-      // ]
+      allCars: [
+        {title: 'Honda', year: 2009},
+        {title: 'Mazda', year: 2001},
+        {title: 'Toyota', year: 2011},
+      ]
     }
   },
   computed: {

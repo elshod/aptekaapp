@@ -1,27 +1,27 @@
 <template>
   <div id="app">
     <h1>Hello APP</h1>
+    <div class="menu">
+      <router-link :to="link.link" v-for="(link,index) of links" :key="index" active-class="active" exact>{{link.title}}</router-link>
+    </div>
     <div class="row">
-      <app-animal></app-animal>
-      <hr>
-      <!-- <app-warehouse></app-warehouse> -->
+      <router-view></router-view>
     </div>
   </div>
 </template>
 <script>
-import AppAnimal from './components/Animals'
-// import AppCars from './components/Cars' 
-// import AppWarehouse from './components/Warehouse' 
 export default {
   name: 'App',
   data: function(){
-    return { hello:'from app'  }
+    return {  
+      links: [
+        { title: 'Home page', link: '/' },
+        { title: 'Cars', link: '/cars'},
+        { title: 'Animals', link: '/animals'},
+        { title: 'Drugs', link: '/drugs'},
+      ]
+    }
   },
-  components: {
-    AppAnimal
-    // AppCars,
-    // AppWarehouse
-  }
 }
 </script>
 <style lang="scss">
