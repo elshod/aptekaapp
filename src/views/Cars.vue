@@ -1,26 +1,27 @@
 <template>
   <div>
+    <app-head></app-head>
     <h1>Cars Vue</h1>
     <div class="menu">
       <router-link 
         v-for="(car,index) of allCars" 
         :key="index" 
-        :to="'car/'+car.title">
+        :to="{name:'car',params:{id:car.title},query:{year:car.year}}">
         {{car.title}} | <b>{{car.year}}</b>
       </router-link>
-      
     </div>
-
     <hr>
     <router-view></router-view>
   </div>
 </template>
 <script>
+import Head from '../components/Head'
 export default {
+  components: {
+    appHead: Head
+  },
   data(){
     return { 
-      // title: '',
-      // cars: [ 'Honda', 'Mazda', 'Toyota' ],
       allCars: [
         {title: 'Honda', year: 2009},
         {title: 'Mazda', year: 2001},

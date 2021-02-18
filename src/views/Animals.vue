@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-
+      <app-head></app-head>
       <label class="form-label">Email</label>
       <input type="text" 
         v-model="email" 
@@ -26,8 +26,11 @@
 
 <script>
 const { required, email } = require('vuelidate/lib/validators')
-
+import Head from '../components/Head'
 export default {
+  components: {
+    appHead: Head
+  },
   data(){
     return {
       email: '',
@@ -45,7 +48,6 @@ export default {
 <style>
   .main {
     max-width: 700px;
-    padding: 30px;
     margin: auto;
   }
 </style>

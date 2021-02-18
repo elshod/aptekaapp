@@ -1,5 +1,6 @@
 <template>
   <div>
+    <app-head></app-head>
     <h2>Hello From {{title}}</h2>
     <button @click="isActive = !isActive">New Drug</button>
     <div v-show="isActive">
@@ -35,7 +36,11 @@
 </template>
 
 <script>
+import Head from '../components/Head'
 export default {
+  components: {
+    appHead: Head
+  },
   data: function(){
     return {
       title: 'Drugs',

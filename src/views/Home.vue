@@ -1,10 +1,18 @@
 <template>
-  <h1>Hello moto</h1>
+  <div>
+    <app-head></app-head>
+    <h1>Hello moto</h1>
+
+  </div>
 </template>
 
 <script>
-export default {
+import Head from '../components/Head'
 
+export default {
+  components: {
+    appHead: Head
+  }
 }
 </script>
 
